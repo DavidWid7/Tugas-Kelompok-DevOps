@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Pemesanan: Reguler</title>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style_reguler.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+                <div class="container-fluid">
+                    <div class="logo_website">
+                        <a href="/home"><img src="img/logo.png" width="40px"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark nama_user" href="/profile"><%= account.username %> </a>
+                            </li>
+                            <li class="nav-item active">
+                                <button type="button" class="btn btn-primary" onclick="myfunction()">Logout</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h1>Paket Reguler</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-warning">
+                        <div class="card-header">
+                            <h3 class="card-title">Form Pemesanan</h3>
+                        </div>
+                        <form action="reguler/proses" method="POST" onsubmit="event.preventDefault(); myfunction2(this)">
+                            <div class="card-body">
+                                <div class="pesan">
+                                    <% if(processed == "true"){ %>
+                                        <%= message %>
+                                    <% }; %>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="tanggalestimasi" class="col-sm-3 col-form-label">Estimasi Selesai</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="tanggalestimasi" id="tanggalestimasi" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="namapelanggan" class="col-sm-3 col-form-label">Nama</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="namapelanggan" id="namapelanggan" placeholder="Nama Pelanggan" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="nomorhp" class="col-sm-3 col-form-label">No. HP</label>
+                                    <div class="col-sm-9">
+                                        <input type="tel" class="form-control" pattern="[0-9]{10-14}" name="nomorhp" id="nomorhp" placeholder="Nomor HP Pelanggan" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="jenispakaian" class="col-sm-3 col-form-label">Jenis Pakaian</label>
+                                    <div class="col-sm-9">
+                                        <select name="jenispakaian" class="form-control" id="jenispakaian">
+                                            <option value="Pakaian Biasa">Pakaian Biasa</option>
+                                            <option value="Selimut" disabled>Selimut</option>
+                                            <option value="Bed Cover" disabled>Bed Cover</option>
+                                            <option value="Other" disabled>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="jumlahpakaian" class="col-sm-3 col-form-label">Jumlah Pakaian</label>
+                                    <div class="col-sm-9">
+                                        <input type="number" min="1" max="10" class="form-control" name="jumlahpakaian" id="jumlahpakaian"
+                                            placeholder="Jumlah (maks: 10 item)" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="beratpakaian" class="col-sm-3 col-form-label">Total Berat</label>
+                                    <div class="col-sm-9">
+                                        <input type="number" min="1" max="15" class="form-control" name="beratpakaian" id="beratpakaian"
+                                            placeholder="Berat (maks: 15 kg)" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="tipepengantaran" class="col-sm-3 col-form-label">Tipe Pengantaran</label>
+                                    <div class="col-sm-9">
+                                        <select name="tipepengantaran" class="form-control" id="tipepengantaran">
+                                            <option value="Antar & Jemput Sendiri">Antar & Jemput Sendiri</option>
+                                            <option value="Diantar" disabled>Diantar</option>
+                                            <option value="Diantar & Dijemput" disabled>Diantar & Dijemput</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="biayapesanan" class="col-sm-3 col-form-label">Biaya Pesanan</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" name="biayapesanan" id="biayapesanan" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <input type="submit" class="btn prosess bg-warning" id="tombol">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card card-warning">
+                        <div class="card-header">
+                            <h3 class="card-title">Daftar Pesanan Paket Reguler yang diproses</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered" id="tabel">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%">No Trans.</th>
+                                        <th style="width: 25%">Nama Pelanggan</th>
+                                        <th style="width: 20%">Jenis Pakaian</th>
+                                        <th style="width: 5%">Jumlah Pakaian</th>
+                                        <th style="width: 5%">Total Berat</th>
+                                        <th style="width: 20%">Tipe Peng.</th>
+                                        <th style="width: 10%">Biaya Pesanan</th>
+                                        <th style="width: 10%">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="data">
+                                    <% if(order.length == 0){ %>
+                                        <tr>
+                                            <td colspan="8" style="text-align:center;">Belum ada pesanan</td>
+                                        </tr>
+                                    <% } else { %>
+                                        <% order.forEach(el => { %>
+                                            <tr class="isi-data">
+                                                <td> <%= el.id %> </td>
+                                                <td> <%= el.nama_pelanggan %> </td>
+                                                <td> <%= el.jenis_pakaian %> </td>
+                                                <td> <%= el.jumlah_pakaian %> </td>
+                                                <td> <%= el.total_berat %> </td>
+                                                <td> <%= el.tipe_pengantaran %> </td>
+                                                <td> <%= el.biaya_pesanan %> </td>
+                                                <td> <%= el.status %> </td>
+                                            </tr>
+                                            <tr class="hide">
+                                                <td colspan="8">Estimasi Selesai : <%= el.tanggal %> </td>
+                                            </tr>
+                                        <% }) %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script_reguler.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function myfunction(){
+          Swal.fire({
+              title: 'Are you sure?',
+              text: `You will be returned to the login page`,
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, i am sure!'
+              }).then((result) => {
+              if (result.isConfirmed) {
+                  logoutUser()
+              }
+          })
+      }
+  
+      const logoutUser = async () => {
+          try {
+              const response = await fetch('/user/logout');
+              const data = await response.json();
+              if (data.result === 'SUCCESS')
+                  location.reload();
+          } catch(e) {
+              console.error(e);
+              alert('Request error!');
+          }
+      };
+    </script>
+</body>
+
+</html>

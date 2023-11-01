@@ -1,0 +1,37 @@
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+.profile_custom{
+    margin: 0 auto;
+}
+
+.profile_custom h4{
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.loc{
+    text-align: center;
+}
+
+.profile_custom p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.center-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+}
+
+.profile_custom p i{
+    width: 30px;
+}

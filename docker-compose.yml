@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nodejs-app:
+    build:
+      context: ../launderland
+      dockerfile: Dockerfile 
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql_db
+      - phpmyadmin
+
+  mysql_db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 3001:80
+    environment:
+      - PMA_ARBITRARY=1

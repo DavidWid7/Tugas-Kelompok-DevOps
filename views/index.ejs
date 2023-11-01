@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="shortcut icon" href="img/favicon.ico"/>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+  <link href="css/pricing.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container py-3">
+
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="logo-laundry">
+          <a class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+              <a href="/home"><img src="img/logo.png" width="40px"></a>
+          </a>
+        </div>
+  
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/home" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="/pemesanan" class="nav-link px-2 link-dark">Pemesanan</a></li>
+          <li><a href="/history" class="nav-link px-2 link-dark">History</a></li>
+          <li><a href="/faq" class="nav-link px-2 link-dark">FAQs</a></li>
+          <li><a href="/about-us" class="nav-link px-2 link-dark">About</a></li>
+        </ul>
+  
+        <div class="text-end">
+          <a href="/profile"><span class="nama_username"><%= account.username %> </span></a>
+          <button type="button" class="btn btn-primary" onclick="myfunction()">Logout</button>
+        </div>
+      </header>
+    </div>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Jasa Laundry Terbaik hanya di Launderland</h1>
+          <div><a href="/pemesanan" class="btn-get-started scrollto">Get Started</a></div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="img/Hero-Picture.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch position-relative">
+
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h3>Bagaimana cara order di Launderland?</h3>
+            <p style="text-align: justify;">Cara nya cukup gampang, Kamu cukup perlu akses website kami, setelah itu daftarkan akun Anda jika belum pernah mendaftar sebelumnya dengan cara klik Sign-Up. Jika kamu sebelumnya sudah pernah mendafatar akun, maka selanjutnya kamu dapat klik Sign-In.</p>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="/pemesanan">Klik Menu Pemesanan</a></h4>
+              <p class="description">Setelah berhasil Sign-In maka kamu akan masuk ke halaman home. Klik menu pemesanan</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="/pemesanan">Pilih Varian Paket & Isi Form</a></h4>
+              <p class="description">kemudian pilih varian paket yang kami tawarkan untuk Anda. Kemudian isikan form pemesanan</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title" style="cursor: pointer;">Tunggu Selesai</h4>
+              <p class="description">kamu sudah berhasil melakukan order di website Launderland. Yuk, #CuciGapakeRibet sekarang!</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 style="font-family: 'Abel', sans-serif">Jasa laundry dengan reputasi terbaik di sekitarmu hanya di Launderland
+           <br> Yuk, <span>#CuciGapakeRibet</span> sekarang!</h2>
+            <img src="img/laundry.png" width="40%">
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-cash-stack" style="color: #ff689b;"></i></div>
+              <h4 class="title">Launderland Layanan Terbaik</h4>
+              <p class="description">Launderland adalah jasa laundry berpengalaman yang telah terstandarisasi dan diakui</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-calendar4-week" style="color: #e9bf06;"></i></div>
+              <h4 class="title">Gratis Antar Jemput Cucian</h4>
+              <p class="description">Cucian kamu akan dijemput dan dikembalikan ke lokasi Kamu. Mau cuci jadi gak perlu anter sendiri.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-chat-text" style="color: #3fcdc7;"></i></div>
+              <h4 class="title">Kepastian Layanan</h4>
+              <p class="description">Kepastian harga, layanan, estimasi selesai, & status dapat Kamu pantau lewat Launderland.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-credit-card-2-front" style="color:#41cf2e;"></i></div>
+              <h4 class="title">Layanan Bebas Khawatir</h4>
+              <p class="description">Cucian kamu dijamin oleh Launderland. Gak perlu lagi khawatir cucian masih kotor, hilang, rusak, dan kelunturan.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-globe" style="color: #d6ff22;"></i></div>
+              <h4 class="title">Beragam Paket Pilihan</h4>
+              <p class="description">Tersedia berbagai varian paket mulai dari 10rb sampai 30rb. Sangat bagus untuk Anda agar dapat layanan sesuai kebutuhan.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-clock" style="color: #4680ff;"></i></div>
+              <h4 class="title">Estimasi Waktu yang tepat</h4>
+              <p class="description">Launderland menawarkan paket dengan estimasi maksimal adalah 3 hari dan estimasi minimal adalah 1 hari.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+</main>
+
+  <!-- ======= Footer ======= -->
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="img/logo.png" alt="" width="30" height="30">
+        <small class="d-block mb-3 text-muted">&copy; 2021</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Pemesanan</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-reguler">Paket Reguler</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-medium">Paket Medium</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-high">Paket High</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/history">History</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Social Media</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.facebook.com" target="_blank">Facebook</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://instagram.com" target="_blank">Instagram</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://twitter.com" target="_blank">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/about-us">Team</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://maps.google.com" target="_blank">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+      function myfunction(){
+          Swal.fire({
+              title: 'Are you sure?',
+              text: `You will be returned to the login page`,
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, i am sure!'
+              }).then((result) => {
+              if (result.isConfirmed) {
+                  logoutUser()
+              }
+          })
+      }
+
+    const logoutUser = async () => {
+        try {
+            const response = await fetch('/user/logout');
+            const data = await response.json();
+            if (data.result === 'SUCCESS')
+                location.reload();
+        } catch(e) {
+            console.error(e);
+            alert('Request error!');
+        }
+    };
+  </script>
+
+</body>
+
+</html>

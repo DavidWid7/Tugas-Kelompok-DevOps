@@ -1,0 +1,148 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/pricing.css" rel="stylesheet">
+  </head>
+  <body>
+    
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check" viewBox="0 0 16 16">
+      <title>Check</title>
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+  </svg>
+
+  <div class="container py-3">
+    <header>
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="logo-laundry">
+                <a class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+                    <a href="/home"><img src="img/logo.png" width="40px"></a>
+                </a>
+            </div>
+
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/home" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="/pemesanan" class="nav-link px-2 link-dark">Pemesanan</a></li>
+            <li><a href="/history" class="nav-link px-2 link-dark">History</a></li>
+            <li><a href="/faq" class="nav-link px-2 link-dark">FAQs</a></li>
+            <li><a href="/about-us" class="nav-link px-2 link-dark">About</a></li>
+          </ul>
+    
+          <div class="text-end">
+            <a href="/profile"><span class="nama_username"><%= account.username %> </span></a>
+            <button type="button" class="btn btn-primary" onclick="logoutUser()">Logout</button>
+          </div>
+        </header>
+      </div>
+    
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="profile_custom">
+                    <img src="img/profile.png" alt="" width="200px" class="center-img">
+                    <h4><%= account.username %> </h4>
+                    <p>
+                        <i class="fas fa-user"></i>Full Name : <%= account.first_name + ' ' + account.last_name %>
+                        <br />
+                        <i class="fas fa-envelope"></i>Email : <%= account.email %> 
+                        <br />
+                        <i class="fas fa-calendar-minus"></i>Birth Date : <%= account.birth_date %> 
+                        <br />
+                        <i class="fas fa-address-book"></i>Alamat : <%= account.alamat %> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+          <img class="mb-2" src="img/logo.png" alt="" width="30" height="30">
+          <small class="d-block mb-3 text-muted">&copy; 2021</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Pemesanan</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-reguler">Paket Reguler</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-medium">Paket Medium</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/pemesanan-high">Paket High</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/history">History</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Social Media</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://twitter.com" target="_blank">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/about-us">Team</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://maps.google.com" target="_blank">Locations</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const logoutUser = async () => {
+        try {
+            const response = await fetch('/user/logout');
+            const data = await response.json();
+            if (data.result === 'SUCCESS') {
+                alert('You have successfully logged out.');
+                location.reload();
+            } else {
+                alert('User logout operation error (message: ' + data.message + ').');
+            }
+        } catch(e) {
+            console.error(e);
+            alert('Request error!');
+        }
+    };
+  </script>
+    
+  </body>
+</html>

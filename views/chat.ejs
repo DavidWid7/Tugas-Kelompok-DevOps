@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/stylechat.css" />
+    <title>Live Chat</title>
+    </title>
+</head>
+
+<body>
+    <%- (account.username == 'admin'?'<a class="btnback" href="/admin">Back</a>':'<a class="btnback" href="/faq">Back</a>') %> 
+    <div class="join-container">
+        <header class="join-header">
+            <h1>Launderland Live Chat</h1>
+        </header>
+        <main class="join-main">
+            <form action="/livechat">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." value="<%= account.username %>" readonly/>
+                </div>
+                <div class="form-control">
+                    <label for="admin">Admin Room</label>
+                    <select name="admin" id="admin">
+                        <option value="Admin 1">Admin 1</option>
+                        <option value="Admin 2">Admin 2</option>
+                        <option value="Admin 3">Admin 3</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Join Chat</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
